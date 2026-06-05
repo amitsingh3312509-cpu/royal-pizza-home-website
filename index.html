@@ -205,91 +205,93 @@ value="🍕 New Royal Pizza Order">
 🍕 Pizza Menu / पिज़्ज़ा मेनू
 
 </h2>
-<select name="menuItem" required>
 
-<option value="">🍕 Select Item / आइटम चुनें</option>
+<select id="menu">
 
-<optgroup label="VEGGIE DELIGHT / वेजी डिलाइट">
-<option>Fresh Veggie / फ्रेश वेजी - ₹130 / ₹240 / ₹360</option>
-<option>Kids Delight / किड्स डिलाइट - ₹130 / ₹240 / ₹360</option>
-<option>Capsicum Veg Pizza / शिमला मिर्च पिज़्ज़ा - ₹130 / ₹240 / ₹360</option>
-<option>Mix Green Wave / मिक्स ग्रीन वेव - ₹130 / ₹240 / ₹360</option>
-</optgroup>
+<option value="">
+Select Menu Item / मेनू आइटम चुनें
+<!-- VEGGIE DELIGHT / वेजी डिलाइट -->
 
-<optgroup label="VEGGIE TREAT / वेजी ट्रीट">
-<option>Veggie Paradise / वेजी पैराडाइज - ₹150 / ₹250 / ₹390</option>
-<option>Spicy Double Tango / स्पाइसी डबल टैंगो - ₹150 / ₹250 / ₹390</option>
-<option>Vegetarian / वेजिटेरियन - ₹150 / ₹250 / ₹390</option>
-<option>Double Cheese Margherita / डबल चीज़ मार्घेरिटा - ₹150 / ₹250 / ₹390</option>
-</optgroup>
+<option value="Fresh Veggie Regular|130">Fresh Veggie Regular / फ्रेश वेजी रेगुलर - ₹130</option>
+<option value="Fresh Veggie Medium|240">Fresh Veggie Medium / फ्रेश वेजी मीडियम - ₹240</option>
+<option value="Fresh Veggie Large|360">Fresh Veggie Large / फ्रेश वेजी लार्ज - ₹360</option>
 
-<optgroup label="VEGGIE FEAST / वेजी फीस्ट">
-<option>Deluxe Veggie / डीलक्स वेजी - ₹170 / ₹270 / ₹430</option>
-<option>Roman Veg / रोमन वेज - ₹170 / ₹270 / ₹430</option>
-<option>Mix Tango / मिक्स टैंगो - ₹170 / ₹270 / ₹430</option>
-<option>Veg Tandoori Pizza / वेज तंदूरी पिज़्ज़ा - ₹170 / ₹270 / ₹430</option>
-</optgroup>
+<option value="Kids Delight Regular|130">Kids Delight Regular / किड्स डिलाइट रेगुलर - ₹130</option>
+<option value="Kids Delight Medium|240">Kids Delight Medium / किड्स डिलाइट मीडियम - ₹240</option>
+<option value="Kids Delight Large|360">Kids Delight Large / किड्स डिलाइट लार्ज - ₹360</option>
 
-<optgroup label="SPECIAL PIZZA / स्पेशल पिज़्ज़ा">
-<option>Farm House / फार्म हाउस - ₹190 / ₹290 / ₹510</option>
-<option>Maryland Paneer Pizza / मेरीलैंड पनीर पिज़्ज़ा - ₹190 / ₹290 / ₹510</option>
-<option>Paneer Delight Pizza / पनीर डिलाइट पिज़्ज़ा - ₹190 / ₹290 / ₹510</option>
-<option>Royal Pizza Home Special / रॉयल पिज़्ज़ा होम स्पेशल - ₹190 / ₹290 / ₹510</option>
-<option>Achari Pizza / अचारी पिज़्ज़ा - ₹190 / ₹290 / ₹510</option>
-<option>Szechuan Pizza / शेज़वान पिज़्ज़ा - ₹190 / ₹290 / ₹510</option>
-</optgroup>
+<option value="Classics Veg Pizza Regular|130">Classics Veg Pizza Regular / क्लासिक वेज पिज्जा रेगुलर - ₹130</option>
+<option value="Classics Veg Pizza Medium|240">Classics Veg Pizza Medium / क्लासिक वेज पिज्जा मीडियम - ₹240</option>
+<option value="Classics Veg Pizza Large|360">Classics Veg Pizza Large / क्लासिक वेज पिज्जा लार्ज - ₹360</option>
 
-<optgroup label="SINGLE TOPPING PIZZA / सिंगल टॉपिंग पिज़्ज़ा">
-<option>Onion Pizza / प्याज पिज़्ज़ा - ₹99 / ₹210 / ₹310</option>
-<option>Tomato Pizza / टमाटर पिज़्ज़ा - ₹99 / ₹210 / ₹310</option>
-<option>Capsicum Pizza / शिमला मिर्च पिज़्ज़ा - ₹99 / ₹210 / ₹310</option>
-<option>Golden Corn Pizza / गोल्डन कॉर्न पिज़्ज़ा - ₹99 / ₹210 / ₹310</option>
-<option>Plain Cheese Pizza / प्लेन चीज़ पिज़्ज़ा - ₹99 / ₹210 / ₹310</option>
-</optgroup>
+<option value="Mix Green Wave Regular|130">Mix Green Wave Regular / मिक्स ग्रीन वेव रेगुलर - ₹130</option>
+<option value="Mix Green Wave Medium|240">Mix Green Wave Medium / मिक्स ग्रीन वेव मीडियम - ₹240</option>
+<option value="Mix Green Wave Large|360">Mix Green Wave Large / मिक्स ग्रीन वेव लार्ज - ₹360</option>
 
-<optgroup label="DOUBLE TOPPING PIZZA / डबल टॉपिंग पिज़्ज़ा">
-<option>Onion & Paneer Pizza / प्याज और पनीर पिज़्ज़ा - ₹120 / ₹230 / ₹340</option>
-<option>Capsicum & Onion Pizza / शिमला मिर्च और प्याज पिज़्ज़ा - ₹120 / ₹230 / ₹340</option>
-<option>Tomato & Golden Corn Pizza / टमाटर और गोल्डन कॉर्न पिज़्ज़ा - ₹120 / ₹230 / ₹340</option>
-<option>Golden Corn & Paneer Pizza / गोल्डन कॉर्न और पनीर पिज़्ज़ा - ₹120 / ₹230 / ₹340</option>
-<option>Capsicum & Mushroom Pizza / शिमला मिर्च और मशरूम पिज़्ज़ा - ₹120 / ₹230 / ₹340</option>
-</optgroup>
+<!-- VEGGIE TREAT / वेजी ट्रीट -->
 
-<optgroup label="BURGER / बर्गर">
-<option>Spicy Veg Burger / स्पाइसी वेज बर्गर - ₹40</option>
-<option>Cheese Burger / चीज़ बर्गर - ₹65</option>
-<option>Mushroom Burger / मशरूम बर्गर - ₹70</option>
-<option>Double Cheese Burger / डबल चीज़ बर्गर - ₹70</option>
-<option>Paneer Burger / पनीर बर्गर - ₹70</option>
-<option>Veg Chilli Cheese Burger / वेज चिली चीज़ बर्गर - ₹90</option>
-<option>Makhani Paneer Burger / मखनी पनीर बर्गर - ₹90</option>
-<option>Szechuan Paneer Burger / शेज़वान पनीर बर्गर - ₹90</option>
-<option>Achari Paneer Burger / अचारी पनीर बर्गर - ₹90</option>
-</optgroup>
+<option value="Veggie Paradise Regular|150">Veggie Paradise Regular / वेजी पैराडाइज रेगुलर - ₹150</option>
+<option value="Veggie Paradise Medium|250">Veggie Paradise Medium / वेजी पैराडाइज मीडियम - ₹250</option>
+<option value="Veggie Paradise Large|390">Veggie Paradise Large / वेजी पैराडाइज लार्ज - ₹390</option>
 
-<optgroup label="NOODLES / नूडल्स">
-<option>Veg Noodles / वेज नूडल्स (Half ₹60 / Full ₹80)</option>
-<option>Paneer Noodles / पनीर नूडल्स (Half ₹70 / Full ₹90)</option>
-<option>Szechuan Noodles / शेज़वान नूडल्स (Half ₹70 / Full ₹90)</option>
-</optgroup>
+<option value="Spicy Double Tango Regular|150">Spicy Double Tango Regular / स्पाइसी डबल टैंगो रेगुलर - ₹150</option>
+<option value="Spicy Double Tango Medium|250">Spicy Double Tango Medium / स्पाइसी डबल टैंगो मीडियम - ₹250</option>
+<option value="Spicy Double Tango Large|390">Spicy Double Tango Large / स्पाइसी डबल टैंगो लार्ज - ₹390</option>
 
-<optgroup label="SANDWICH / सैंडविच">
-<option>Veg Sandwich / वेज सैंडविच - ₹55</option>
-<option>Cheese Sandwich / चीज़ सैंडविच - ₹60</option>
-<option>Paneer Sandwich / पनीर सैंडविच - ₹65</option>
-</optgroup>
+<option value="Vegetarian Regular|150">Vegetarian Regular / वेजिटेरियन रेगुलर - ₹150</option>
+<option value="Vegetarian Medium|250">Vegetarian Medium / वेजिटेरियन मीडियम - ₹250</option>
+<option value="Vegetarian Large|390">Vegetarian Large / वेजिटेरियन लार्ज - ₹390</option>
 
-<optgroup label="SIDE VEG / साइड वेज">
-<option>French Fries / फ्रेंच फ्राइज़ - ₹50</option>
-</optgroup>
+<option value="Double Cheese Margherita Regular|150">Double Cheese Margherita Regular / डबल चीज़ मार्घेरिटा रेगुलर - ₹150</option>
+<option value="Double Cheese Margherita Medium|250">Double Cheese Margherita Medium / डबल चीज़ मार्घेरिटा मीडियम - ₹250</option>
+<option value="Double Cheese Margherita Large|390">Double Cheese Margherita Large / डबल चीज़ मार्घेरिटा लार्ज - ₹390</option>
 
-<optgroup label="COFFEE & DESSERT / कॉफी और डेज़र्ट">
-<option>Hot Coffee / गरम कॉफी - ₹35</option>
-<option>Cold Coffee / ठंडी कॉफी - ₹60</option>
-<option>Chocolava Cake / चोकोलावा केक - ₹70</option>
-</optgroup>
+<!-- VEGGIE FEAST / वेजी फीस्ट -->
 
-  </select>
+<option value="Deluxe Veggie Regular|170">Deluxe Veggie Regular / डीलक्स वेजी रेगुलर - ₹170</option>
+<option value="Deluxe Veggie Medium|270">Deluxe Veggie Medium / डीलक्स वेजी मीडियम - ₹270</option>
+<option value="Deluxe Veggie Large|430">Deluxe Veggie Large / डीलक्स वेजी लार्ज - ₹430</option>
+
+<option value="Roman Veg Regular|170">Roman Veg Regular / रोमन वेज रेगुलर - ₹170</option>
+<option value="Roman Veg Medium|270">Roman Veg Medium / रोमन वेज मीडियम - ₹270</option>
+<option value="Roman Veg Large|430">Roman Veg Large / रोमन वेज लार्ज - ₹430</option>
+
+<option value="Mix Tango Regular|170">Mix Tango Regular / मिक्स टैंगो रेगुलर - ₹170</option>
+<option value="Mix Tango Medium|270">Mix Tango Medium / मिक्स टैंगो मीडियम - ₹270</option>
+<option value="Mix Tango Large|430">Mix Tango Large / मिक्स टैंगो लार्ज - ₹430</option>
+
+<option value="Veg Tandoori Pizza Regular|170">Veg Tandoori Pizza Regular / वेज तंदूरी पिज्जा रेगुलर - ₹170</option>
+<option value="Veg Tandoori Pizza Medium|270">Veg Tandoori Pizza Medium / वेज तंदूरी पिज्जा मीडियम - ₹270</option>
+<option value="Veg Tandoori Pizza Large|430">Veg Tandoori Pizza Large / वेज तंदूरी पिज्जा लार्ज - ₹430</option>
+
+<!-- SPECIAL PIZZA / स्पेशल पिज्जा -->
+
+<option value="Farm House Regular|190">Farm House Regular / फार्म हाउस रेगुलर - ₹190</option>
+<option value="Farm House Medium|290">Farm House Medium / फार्म हाउस मीडियम - ₹290</option>
+<option value="Farm House Large|510">Farm House Large / फार्म हाउस लार्ज - ₹510</option>
+
+<option value="Maryland Paneer Pizza Regular|190">Maryland Paneer Pizza Regular / मैरीलैंड पनीर पिज्जा रेगुलर - ₹190</option>
+<option value="Maryland Paneer Pizza Medium|290">Maryland Paneer Pizza Medium / मैरीलैंड पनीर पिज्जा मीडियम - ₹290</option>
+<option value="Maryland Paneer Pizza Large|510">Maryland Paneer Pizza Large / मैरीलैंड पनीर पिज्जा लार्ज - ₹510</option>
+
+<option value="Paneer Delight Pizza Regular|190">Paneer Delight Pizza Regular / पनीर डिलाइट पिज्जा रेगुलर - ₹190</option>
+<option value="Paneer Delight Pizza Medium|290">Paneer Delight Pizza Medium / पनीर डिलाइट पिज्जा मीडियम - ₹290</option>
+<option value="Paneer Delight Pizza Large|510">Paneer Delight Pizza Large / पनीर डिलाइट पिज्जा लार्ज - ₹510</option>
+
+<option value="Royal Pizza Home Special Regular|190">Royal Pizza Home Special Regular / रॉयल पिज्जा होम स्पेशल रेगुलर - ₹190</option>
+<option value="Royal Pizza Home Special Medium|290">Royal Pizza Home Special Medium / रॉयल पिज्जा होम स्पेशल मीडियम - ₹290</option>
+<option value="Royal Pizza Home Special Large|510">Royal Pizza Home Special Large / रॉयल पिज्जा होम स्पेशल लार्ज - ₹510</option>
+
+<option value="Achari Pizza Regular|190">Achari Pizza Regular / अचारी पिज्जा रेगुलर - ₹190</option>
+<option value="Achari Pizza Medium|290">Achari Pizza Medium / अचारी पिज्जा मीडियम - ₹290</option>
+<option value="Achari Pizza Large|510">Achari Pizza Large / अचारी पिज्जा लार्ज - ₹510</option>
+
+<option value="Szechuan Pizza Regular|190">Szechuan Pizza Regular / शेज़वान पिज्जा रेगुलर - ₹190</option>
+<option value="Szechuan Pizza Medium|290">Szechuan Pizza Medium / शेज़वान पिज्जा मीडियम - ₹290</option>
+<option value="Szechuan Pizza Large|510">Szechuan Pizza Large / शेज़वान पिज्जा लार्ज - ₹510</option>
+</option>
+
+</select>
 
 <input type="number"
 id="qty"
@@ -375,15 +377,17 @@ placeholder="Mobile Number / मोबाइल नंबर"
 required>
 
 <!-- VILLAGE -->
-
-<select id="village"
-name="Village"
 required>
 
 <option value="">
 Select Village / गाँव चुनें
 </option>
-  
+<select id="village">
+
+<option value="">
+Select Village / गाँव चुनें
+</option>
+
 <option value="Bansdih|20|30 Minutes">
 Bansdih / बांसडीह - ₹20 - 30 Minutes
 </option>
@@ -465,6 +469,9 @@ Mairitar / मैरीटार - ₹40 - 40-45 Minutes
 </option>
 
 </select>
+
+</select>
+
 <button type="button"
 class="download-btn"
 onclick="showDelivery()">
@@ -494,7 +501,7 @@ onclick="showDelivery()">
 <p style="text-align:center;">
 
 UPI ID:
-6307177262@ibl
+7309277213@ibl
 
 </p>
 
@@ -535,7 +542,7 @@ id="msg"></p>
 
 <div class="footer">
 
-Created by Amit Kumar Singh mobile no=9151041867, 7309277213
+Created by Amit Kumar Singh
 
 </div>
 
@@ -544,7 +551,7 @@ Created by Amit Kumar Singh mobile no=9151041867, 7309277213
 function callNow(){
 
 window.location.href =
-"tel:";
+"tel:7309277213";
 
 }
 
@@ -794,7 +801,7 @@ pdf.splitTextToSize(text,180);
 pdf.text(lines,15,40);
 
 pdf.text(
-"Created by Amit Kumar Singh mobile no 9151041867 7309277213",
+"Created by Amit Kumar Singh",
 55,
 285
 );
@@ -826,7 +833,7 @@ Vidya Bhawan Narayanpur
 Sultanpur
 
 Contact:
-6307177262
+7309277213
 
 `;
 
