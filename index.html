@@ -1,1084 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<div class="royal-scroll">
-  <div class="royal-scroll-text">
-    🍕 Royal Pizza Home, Bansdih Ballia में आपका स्वागत है | Welcome to Royal Pizza Home, Bansdih Ballia 🍕 |
-    🚚 फास्ट होम डिलीवरी | Fast Home Delivery |
-    🍔 Burger | 🍕 Pizza | 🥟 Momos | 🌯 Roll | 🍟 French Fries |
-    ⭐ स्वाद में बेस्ट | Best in Taste |
-    📞 Order Now: 63071 77262,80521 14997,7309277213
-  </div>
-</div>
-
-<style>
-.royal-scroll{
-    width:100%;
-    background:linear-gradient(90deg,#d32f2f,#ff9800,#d32f2f);
-    color:#fff;
-    overflow:hidden;
-    white-space:nowrap;
-    padding:12px 0;
-    font-size:18px;
-    font-weight:700;
-    border-top:3px solid #fff;
-    border-bottom:3px solid #fff;
-    box-shadow:0 3px 10px rgba(0,0,0,0.3);
-}
-
-.royal-scroll-text{
-    display:inline-block;
-    padding-left:100%;
-    animation:royalScroll 20s linear infinite;
-}
-
-.royal-scroll:hover .royal-scroll-text{
-    animation-play-state:paused;
-}
-
-@keyframes royalScroll{
-    from{
-        transform:translateX(0);
-    }
-    to{
-        transform:translateX(-100%);
-    }
-}
-</style>
-</div>
-
-<style>
-.scroll-container{
-    width:100%;
-    overflow:hidden;
-    background:#ff9800;
-    color:white;
-    padding:12px 0;
-    font-size:20px;
-    font-weight:bold;
-    white-space:nowrap;
-}
-
-.scroll-text{
-    display:inline-block;
-    padding-left:100%;
-    animation:scroll 15s linear infinite;
-}
-
-@keyframes scroll{
-    0%{
-        transform:translateX(0);
-    }
-    100%{
-        transform:translateX(-100%);
-    }
-}
-</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>
-🍕 Royal Pizza Home Bansdih
-</title>
-
-<!-- jsPDF -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<title>Library Registration Form</title>
 
 <style>
-
-body{
-
-margin:0;
-padding:0;
-font-family:Arial;
-background:#f5f5f5;
-
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
-.header{
-
-background:#ff1493;
-color:white;
-padding:18px;
-text-align:center;
-font-size:28px;
-font-weight:bold;
-
+body{
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    min-height:100vh;
+    padding:20px;
 }
 
 .container{
-
-max-width:800px;
-margin:20px auto;
-background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
-
+    max-width:600px;
+    margin:auto;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
 }
 
-h2,h3{
-
-text-align:center;
-color:#ff1493;
-
+h1{
+    text-align:center;
+    color:#0d47a1;
+    margin-bottom:10px;
 }
 
-input,select{
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:25px;
+}
 
-width:100%;
-padding:12px;
-margin-top:8px;
-margin-bottom:12px;
-border-radius:6px;
-border:1px solid #ccc;
-font-size:16px;
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
 
+input, textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+textarea{
+    resize:none;
+}
+
+.photo-preview{
+    width:120px;
+    height:120px;
+    border:2px dashed #999;
+    border-radius:10px;
+    margin:15px auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    color:#777;
+}
+
+.photo-preview img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 button{
-
-width:100%;
-padding:12px;
-border:none;
-border-radius:6px;
-font-size:16px;
-cursor:pointer;
-margin-top:10px;
-color:white;
-
+    width:100%;
+    margin-top:25px;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:#0d47a1;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
 }
 
-.add-btn{
-
-background:#ff1493;
-
+button:hover{
+    background:#08306b;
 }
 
-.submit-btn{
-
-background:black;
-
+footer{
+    text-align:center;
+    margin-top:20px;
+    color:white;
 }
 
-.download-btn{
-
-background:#ff1493;
-
+@media(max-width:600px){
+    .container{
+        padding:20px;
+    }
 }
-
-.remove-btn{
-
-background:red;
-padding:6px 10px;
-border:none;
-border-radius:5px;
-color:white;
-
-}
-
-.call-btn{
-
-background:green;
-
-}
-
-.cart{
-
-background:#f1f1f1;
-padding:15px;
-border-radius:10px;
-margin-top:15px;
-
-}
-
-.note{
-
-color:red;
-font-weight:bold;
-text-align:center;
-
-}
-
-.msg{
-
-text-align:center;
-font-weight:bold;
-color:green;
-margin-top:15px;
-
-}
-
-.footer{
-
-text-align:center;
-padding:15px;
-font-weight:bold;
-color:#555;
-
-}
-
 </style>
-
 </head>
-
 <body>
-
-<div class="header">
-
-🍕 Royal Pizza Home Bansdih
-<br>
-रॉयल पिज़्ज़ा होम बांसडीह
-
-</div>
 
 <div class="container">
 
-<button class="call-btn"
-onclick="callNow()">
-
-📞 Call Now / कॉल करें
-
-</button>
-
-<!-- MENU DOWNLOAD -->
-
-<button class="download-btn"
-onclick="downloadMenu()">
-
-📥 Download Menu /
-मेनू डाउनलोड
-
-</button>
-
-<!-- FORM -->
-
-<form id="form"
-action="https://formsubmit.co/shivamtiwaribigahi1234@gmail.com"
-method="POST">
-
-<input type="hidden"
-name="_captcha"
-value="false">
-
-<input type="hidden"
-name="_template"
-value="table">
-
-<input type="hidden"
-name="_subject"
-value="🍕 New Royal Pizza Order">
-
-<!-- MENU -->
-
-<h2>
-
-🍕 Pizza Menu / पिज़्ज़ा मेनू
-
-</h2>
-
-<select id="menu">
-
-<option value="">
-Select Menu Item / मेनू आइटम चुनें
-<!-- VEGGIE DELIGHT / वेजी डिलाइट -->
-<optgroup label="BURGER / बर्गर">
-
-<option value="Spicy Veg Burger|40">
-Spicy Veg Burger / स्पाइसी वेज बर्गर - ₹40
-</option>
-
-<option value="Cheese Burger|65">
-Cheese Burger / चीज़ बर्गर - ₹65
-</option>
-
-<option value="Mushroom Burger|70">
-Mushroom Burger / मशरूम बर्गर - ₹70
-</option>
-
-<option value="Double Cheese Burger|70">
-Double Cheese Burger / डबल चीज़ बर्गर - ₹70
-</option>
-
-<option value="Paneer Burger|70">
-Paneer Burger / पनीर बर्गर - ₹70
-</option>
-
-<option value="Veg Chilli Cheese Burger|90">
-Veg Chilli Cheese Burger / वेज चिली चीज़ बर्गर - ₹90
-</option>
-
-<option value="Makhani Paneer Burger|90">
-Makhani Paneer Burger / मखनी पनीर बर्गर - ₹90
-</option>
-
-<option value="Szechuan Paneer Burger|90">
-Szechuan Paneer Burger / शेज़वान पनीर बर्गर - ₹90
-</option>
-
-<option value="Achari Paneer Burger|90">
-Achari Paneer Burger / अचारी पनीर बर्गर - ₹90
-</option>
-
-</optgroup>
-<option value="Fresh Veggie Regular|130">Fresh Veggie Regular / फ्रेश वेजी रेगुलर - ₹130</option>
-<option value="Fresh Veggie Medium|240">Fresh Veggie Medium / फ्रेश वेजी मीडियम - ₹240</option>
-<option value="Fresh Veggie Large|360">Fresh Veggie Large / फ्रेश वेजी लार्ज - ₹360</option>
-
-<option value="Kids Delight Regular|130">Kids Delight Regular / किड्स डिलाइट रेगुलर - ₹130</option>
-<option value="Kids Delight Medium|240">Kids Delight Medium / किड्स डिलाइट मीडियम - ₹240</option>
-<option value="Kids Delight Large|360">Kids Delight Large / किड्स डिलाइट लार्ज - ₹360</option>
-
-<option value="Classics Veg Pizza Regular|130">Classics Veg Pizza Regular / क्लासिक वेज पिज्जा रेगुलर - ₹130</option>
-<option value="Classics Veg Pizza Medium|240">Classics Veg Pizza Medium / क्लासिक वेज पिज्जा मीडियम - ₹240</option>
-<option value="Classics Veg Pizza Large|360">Classics Veg Pizza Large / क्लासिक वेज पिज्जा लार्ज - ₹360</option>
-
-<option value="Mix Green Wave Regular|130">Mix Green Wave Regular / मिक्स ग्रीन वेव रेगुलर - ₹130</option>
-<option value="Mix Green Wave Medium|240">Mix Green Wave Medium / मिक्स ग्रीन वेव मीडियम - ₹240</option>
-<option value="Mix Green Wave Large|360">Mix Green Wave Large / मिक्स ग्रीन वेव लार्ज - ₹360</option>
-
-<!-- VEGGIE TREAT / वेजी ट्रीट -->
-
-<option value="Veggie Paradise Regular|150">Veggie Paradise Regular / वेजी पैराडाइज रेगुलर - ₹150</option>
-<option value="Veggie Paradise Medium|250">Veggie Paradise Medium / वेजी पैराडाइज मीडियम - ₹250</option>
-<option value="Veggie Paradise Large|390">Veggie Paradise Large / वेजी पैराडाइज लार्ज - ₹390</option>
-
-<option value="Spicy Double Tango Regular|150">Spicy Double Tango Regular / स्पाइसी डबल टैंगो रेगुलर - ₹150</option>
-<option value="Spicy Double Tango Medium|250">Spicy Double Tango Medium / स्पाइसी डबल टैंगो मीडियम - ₹250</option>
-<option value="Spicy Double Tango Large|390">Spicy Double Tango Large / स्पाइसी डबल टैंगो लार्ज - ₹390</option>
-
-<option value="Vegetarian Regular|150">Vegetarian Regular / वेजिटेरियन रेगुलर - ₹150</option>
-<option value="Vegetarian Medium|250">Vegetarian Medium / वेजिटेरियन मीडियम - ₹250</option>
-<option value="Vegetarian Large|390">Vegetarian Large / वेजिटेरियन लार्ज - ₹390</option>
-
-<option value="Double Cheese Margherita Regular|150">Double Cheese Margherita Regular / डबल चीज़ मार्घेरिटा रेगुलर - ₹150</option>
-<option value="Double Cheese Margherita Medium|250">Double Cheese Margherita Medium / डबल चीज़ मार्घेरिटा मीडियम - ₹250</option>
-<option value="Double Cheese Margherita Large|390">Double Cheese Margherita Large / डबल चीज़ मार्घेरिटा लार्ज - ₹390</option>
-
-<!-- VEGGIE FEAST / वेजी फीस्ट -->
-
-<option value="Deluxe Veggie Regular|170">Deluxe Veggie Regular / डीलक्स वेजी रेगुलर - ₹170</option>
-<option value="Deluxe Veggie Medium|270">Deluxe Veggie Medium / डीलक्स वेजी मीडियम - ₹270</option>
-<option value="Deluxe Veggie Large|430">Deluxe Veggie Large / डीलक्स वेजी लार्ज - ₹430</option>
-
-<option value="Roman Veg Regular|170">Roman Veg Regular / रोमन वेज रेगुलर - ₹170</option>
-<option value="Roman Veg Medium|270">Roman Veg Medium / रोमन वेज मीडियम - ₹270</option>
-<option value="Roman Veg Large|430">Roman Veg Large / रोमन वेज लार्ज - ₹430</option>
-
-<option value="Mix Tango Regular|170">Mix Tango Regular / मिक्स टैंगो रेगुलर - ₹170</option>
-<option value="Mix Tango Medium|270">Mix Tango Medium / मिक्स टैंगो मीडियम - ₹270</option>
-<option value="Mix Tango Large|430">Mix Tango Large / मिक्स टैंगो लार्ज - ₹430</option>
-
-<option value="Veg Tandoori Pizza Regular|170">Veg Tandoori Pizza Regular / वेज तंदूरी पिज्जा रेगुलर - ₹170</option>
-<option value="Veg Tandoori Pizza Medium|270">Veg Tandoori Pizza Medium / वेज तंदूरी पिज्जा मीडियम - ₹270</option>
-<option value="Veg Tandoori Pizza Large|430">Veg Tandoori Pizza Large / वेज तंदूरी पिज्जा लार्ज - ₹430</option>
-
-<!-- SPECIAL PIZZA / स्पेशल पिज्जा -->
-
-<option value="Farm House Regular|190">Farm House Regular / फार्म हाउस रेगुलर - ₹190</option>
-<option value="Farm House Medium|290">Farm House Medium / फार्म हाउस मीडियम - ₹290</option>
-<option value="Farm House Large|510">Farm House Large / फार्म हाउस लार्ज - ₹510</option>
-
-<option value="Maryland Paneer Pizza Regular|190">Maryland Paneer Pizza Regular / मैरीलैंड पनीर पिज्जा रेगुलर - ₹190</option>
-<option value="Maryland Paneer Pizza Medium|290">Maryland Paneer Pizza Medium / मैरीलैंड पनीर पिज्जा मीडियम - ₹290</option>
-<option value="Maryland Paneer Pizza Large|510">Maryland Paneer Pizza Large / मैरीलैंड पनीर पिज्जा लार्ज - ₹510</option>
-
-<option value="Paneer Delight Pizza Regular|190">Paneer Delight Pizza Regular / पनीर डिलाइट पिज्जा रेगुलर - ₹190</option>
-<option value="Paneer Delight Pizza Medium|290">Paneer Delight Pizza Medium / पनीर डिलाइट पिज्जा मीडियम - ₹290</option>
-<option value="Paneer Delight Pizza Large|510">Paneer Delight Pizza Large / पनीर डिलाइट पिज्जा लार्ज - ₹510</option>
-
-<option value="Royal Pizza Home Special Regular|190">Royal Pizza Home Special Regular / रॉयल पिज्जा होम स्पेशल रेगुलर - ₹190</option>
-<option value="Royal Pizza Home Special Medium|290">Royal Pizza Home Special Medium / रॉयल पिज्जा होम स्पेशल मीडियम - ₹290</option>
-<option value="Royal Pizza Home Special Large|510">Royal Pizza Home Special Large / रॉयल पिज्जा होम स्पेशल लार्ज - ₹510</option>
-
-<option value="Achari Pizza Regular|190">Achari Pizza Regular / अचारी पिज्जा रेगुलर - ₹190</option>
-<option value="Achari Pizza Medium|290">Achari Pizza Medium / अचारी पिज्जा मीडियम - ₹290</option>
-<option value="Achari Pizza Large|510">Achari Pizza Large / अचारी पिज्जा लार्ज - ₹510</option>
-
-<option value="Szechuan Pizza Regular|190">Szechuan Pizza Regular / शेज़वान पिज्जा रेगुलर - ₹190</option>
-<option value="Szechuan Pizza Medium|290">Szechuan Pizza Medium / शेज़वान पिज्जा मीडियम - ₹290</option>
-<option value="Szechuan Pizza Large|510">Szechuan Pizza Large / शेज़वान पिज्जा लार्ज - ₹510</option>
-</option>
-
-</select>
-
-<input type="number"
-id="qty"
-value="1"
-placeholder="Quantity / मात्रा">
-
-<button type="button"
-class="add-btn"
-onclick="addCart()">
-
-🛒 Add To Cart /
-कार्ट में जोड़ें
-
-</button>
-
-<!-- CART -->
-
-<div class="cart">
-
-<h3>
-
-🛒 Cart / कार्ट
-
-</h3>
-
-<div id="cart"></div>
-
-<p>
-
-Total / कुल ₹
-<span id="total">0</span>
-
-</p>
-
-<p>
-
-Delivery Charge /
-डिलीवरी चार्ज ₹
-
-<span id="delivery">0</span>
-
-</p>
-
-<p>
-
-Final Amount /
-कुल भुगतान ₹
-
-<span id="final">0</span>
-
-</p>
-
-<p>
-
-Advance 50% /
-एडवांस ₹
-
-<span id="advance">0</span>
-
-</p>
+    <h1>📚 My Library</h1>
+    <p class="subtitle">Student Registration Form</p>
+
+    <!-- Apna email yahan daalein -->
+    <form action="https://formsubmit.co/amitsingh3312509@gmail.com"
+          method="POST"
+          enctype="multipart/form-data">
+
+        <label>Student Name</label>
+        <input type="text"
+               name="Student Name"
+               placeholder="Enter Student Name"
+               required>
+
+        <label>Student Email</label>
+        <input type="email"
+               name="Student Email"
+               placeholder="Enter Email Address"
+               required>
+
+        <label>Mobile Number</label>
+        <input type="tel"
+               name="Mobile Number"
+               placeholder="Enter Mobile Number"
+               pattern="[0-9]{10}"
+               required>
+
+        <label>Alternate Mobile Number</label>
+        <input type="tel"
+               name="Alternate Number"
+               placeholder="Enter Alternate Number"
+               pattern="[0-9]{10}">
+
+        <label>Father Name</label>
+        <input type="text"
+               name="Father Name"
+               placeholder="Enter Father Name"
+               required>
+
+        <label>Mother Name</label>
+        <input type="text"
+               name="Mother Name"
+               placeholder="Enter Mother Name"
+               required>
+
+        <label>Address</label>
+        <textarea name="Address"
+                  rows="4"
+                  placeholder="Enter Full Address"
+                  required></textarea>
+
+        <label>Upload Student Photo</label>
+
+        <div class="photo-preview" id="preview">
+            Photo Preview
+        </div>
+
+        <input type="file"
+               id="photo"
+               name="Student Photo"
+               accept="image/*"
+               required>
+
+        <!-- FormSubmit Settings -->
+        <input type="hidden"
+               name="_subject"
+               value="New Library Registration">
+
+        <input type="hidden"
+               name="_template"
+               value="table">
+
+        <input type="hidden"
+               name="_captcha"
+               value="false">
+
+        <input type="hidden"
+               name="_autoresponse"
+               value="Dear Student, your registration in our library has been successfully completed. Thank you for joining our library.">
+
+        <button type="submit">Register Now</button>
+
+    </form>
 
 </div>
 
-<!-- CUSTOMER DETAILS -->
-
-<h2>
-
-👤 Customer Details /
-ग्राहक जानकारी
-
-</h2>
-
-<input type="text"
-id="name"
-name="Customer Name"
-placeholder="Customer Name / ग्राहक नाम"
-required>
-
-<input type="text"
-id="mobile"
-name="Mobile Number"
-placeholder="Mobile Number / मोबाइल नंबर"
-required>
-
-<!-- VILLAGE -->
-required>
-
-<option value="">
-Select Village / गाँव चुनें
-</option>
-<select id="village">
-
-<option value="">
-Select Village / गाँव चुनें
-</option>
-
-<option value="Bansdih|20|30 Minutes">
-Bansdih / बांसडीह - ₹20 - 30 Minutes
-</option>
-<option value="Kakarkunda|45|50 Minutes">
-Kakarkunda / ककरकुंडा - ₹45 - 50 Minutes
-</option>
-
-<option value="Duhi Mushi|45|50 Minutes">
-Duhi Mushi / दुही मुशी - ₹45 - 50 Minutes
-</option>
-
-<option value="Janki Chhapra|45|50 Minutes">
-Janki Chhapra / जानकी छपरा - ₹45 - 50 Minutes
-</option>
-
-<option value="Hardattpur|30|50 Minutes">
-Hardattpur / हरदत्तपुर - ₹30 - 50 Minutes
-</option>
-
-<option value="Dewdih|35|40-45 Minutes">
-Dewdih / देउडीह - ₹35 - 40-45 Minutes
-</option>
-
-<option value="Aadar|35|40-45 Minutes">
-Aadar / आदर - ₹35 - 40-45 Minutes
-</option>
-
-<option value="Kewtallia Kala|20|40-45 Minutes">
-Kewtallia Kala / केवटलिया कला - ₹20 - 40-45 Minutes
-</option>
-
-<option value="Kewtallia Kurd|35|40-45 Minutes">
-Kewtallia Kurd / केवटलिया खुर्द - ₹35 - 40-45 Minutes
-</option>
-
-<option value="Kewtallia Chaubey|35|40-45 Minutes">
-Kewtallia Chaubey / केवटलिया चौबे - ₹35 - 40-45 Minutes
-</option>
-
-<option value="Vidya Bhawan Narayanpur|20|40-45 Minutes">
-Vidya Bhawan Narayanpur / विद्या भवन नारायणपुर - ₹20 - 40-45 Minutes
-</option>
-
-<option value="Janpur|40|40-45 Minutes">
-Janpur / जानपुर - ₹40 - 40-45 Minutes
-</option>
-
-<option value="Mudiyari|40|40-45 Minutes">
-Mudiyari / मुड़ियारी - ₹40 - 40-45 Minutes
-</option>
-
-<option value="Purandarpur|40|40-45 Minutes">
-Purandarpur / पुरंदरपुर - ₹40 - 40-45 Minutes
-</option>
-
-<option value="Semari|40|40-45 Minutes">
-Semari / सेमरी - ₹40 - 40-45 Minutes
-</option>
-
-<option value="Dhanpariya|40|40-45 Minutes">
-Dhanpariya / धनपरिया - ₹40 - 40-45 Minutes
-</option>
-
-<option value="Asega|35|40-45 Minutes">
-Asega / असेगा - ₹35 - 40-45 Minutes
-</option>
-
-<option value="Halpur|40|40-45 Minutes">
-Halpur / हलपुर - ₹40 - 40-45 Minutes
-</option>
-
-<option value="Jaynagar|40|40-45 Minutes">
-Jaynagar / जयनगर - ₹40 - 40-45 Minutes
-</option>
-
-<option value="Badasari|40|40-45 Minutes">
-Badasari / बड़ासरी - ₹40 - 40-45 Minutes
-</option>
-
-<option value="Rajagaaw|40|40-45 Minutes">
-RajagaawKharauni / राजागांवखरौनी - ₹40 - 40-45 Minutes
-</option>
-
-<option value="Chhotaki Seriya|35|40-45 Minutes">
-Chhotaki Seriya / छोटकी सेरिया - ₹35 - 40-45 Minutes
-</option>
-
-<option value="Mairitar|40|40-45 Minutes">
-Mairitar / मैरीटार - ₹40 - 40-45 Minutes
-</option>
-
-</select>
-
-</select>
-
-<button type="button"
-class="download-btn"
-onclick="showDelivery()">
-
-🚚 Check Delivery /
-डिलीवरी देखें
-
-</button>
-
-<h3 id="result"></h3>
-
-<p class="note">
-
-⚠️ 50% Advance Required /
-50% एडवांस जरूरी है
-
-</p>
-
-<!-- PAYMENT -->
-
-<h2>
-
-💳 Payment / भुगतान
-
-</h2>
-
-<p style="text-align:center;">
-
-UPI ID:
-6307177262@ibl
-
-</p>
-
-<input type="text"
-id="txn"
-name="Transaction ID"
-placeholder="Transaction ID / ट्रांजैक्शन आईडी"
-required>
-
-<input type="hidden"
-id="receiptData"
-name="Full Receipt">
-
-<button type="submit"
-class="submit-btn">
-
-🍕 Submit Order /
-ऑर्डर करें
-
-</button>
-
-</form>
-
-<!-- RECEIPT -->
-
-<button class="download-btn"
-onclick="downloadPDF()">
-
-📄 Download Receipt /
-रसीद डाउनलोड
-
-</button>
-
-<p class="msg"
-id="msg"></p>
-
-</div>
-
-<div class="footer">
-
-Created by Amit Kumar Singh
-
-</div>
+<footer>
+    © 2026 My Library | All Rights Reserved
+</footer>
 
 <script>
+const photo = document.getElementById("photo");
+const preview = document.getElementById("preview");
 
-function callNow(){
+photo.addEventListener("change", function() {
 
-window.location.href =
-"tel:6307177262";
+    const file = this.files[0];
 
-}
+    if(file){
+        const reader = new FileReader();
 
-let cart = [];
+        reader.addEventListener("load", function(){
+            preview.innerHTML =
+            `<img src="${this.result}" alt="Photo">`;
+        });
 
-let total = 0;
-
-let deliveryCharge = 0;
-
-let deliveryTime = "";
-
-function addCart(){
-
-let menu =
-document.getElementById("menu");
-
-let data =
-menu.value.split("|");
-
-if(menu.value==""){
-
-alert("Select Menu Item");
-return;
-
-}
-
-let itemName = data[0];
-
-let itemPrice = Number(data[1]);
-
-let qty =
-Number(document.getElementById("qty").value);
-
-cart.push({
-
-name:itemName,
-price:itemPrice,
-qty:qty
-
+        reader.readAsDataURL(file);
+    }
 });
-
-total += itemPrice * qty;
-
-updateCart();
-
-}
-
-function updateCart(){
-
-let html = "";
-
-cart.forEach((item,index)=>{
-
-html += `
-
-${item.name}
-x${item.qty}
-= ₹${item.price * item.qty}
-
-<button type="button"
-class="remove-btn"
-onclick="removeItem(${index})">
-
-❌ Remove
-
-</button>
-
-<br><br>
-
-`;
-
-});
-
-document.getElementById("cart").innerHTML =
-html;
-
-document.getElementById("total").innerText =
-total;
-
-document.getElementById("delivery").innerText =
-deliveryCharge;
-
-let finalAmount =
-total + Number(deliveryCharge);
-
-document.getElementById("final").innerText =
-finalAmount;
-
-document.getElementById("advance").innerText =
-Math.round(finalAmount/2);
-
-}
-
-function removeItem(index){
-
-total -=
-cart[index].price *
-cart[index].qty;
-
-cart.splice(index,1);
-
-updateCart();
-
-}
-
-function showDelivery(){
-
-let data =
-document.getElementById("village").value;
-
-let arr =
-data.split("|");
-
-deliveryCharge = Number(arr[1]);
-
-deliveryTime = arr[2];
-
-document.getElementById("result").innerHTML =
-
-"🚚 Delivery Charge / डिलीवरी चार्ज: ₹" +
-deliveryCharge +
-
-"<br><br>" +
-
-"⏰ Delivery Time / डिलीवरी समय: " +
-deliveryTime;
-
-updateCart();
-
-}
-
-document.getElementById("form")
-.addEventListener("submit",function(){
-
-let date =
-new Date();
-
-let items = "";
-
-cart.forEach(item=>{
-
-items +=
-item.name +
-" x" +
-item.qty +
-" ₹" +
-(item.price * item.qty)
-+ "\n";
-
-});
-
-let finalAmount =
-total + deliveryCharge;
-
-let advance =
-Math.round(finalAmount/2);
-
-let receipt =
-
-"ROYAL PIZZA HOME\n\n"+
-
-"Name: " +
-document.getElementById("name").value +
-
-"\nMobile: " +
-document.getElementById("mobile").value +
-
-"\nVillage: " +
-document.getElementById("village").value +
-
-"\n\nItems:\n" +
-items +
-
-"\nTotal: ₹" +
-finalAmount +
-
-"\nAdvance: ₹" +
-advance +
-
-"\nDelivery Charge: ₹" +
-deliveryCharge +
-
-"\nTransaction ID: " +
-document.getElementById("txn").value +
-
-"\nDate: " +
-date.toLocaleDateString() +
-
-"\nTime: " +
-date.toLocaleTimeString() +
-
-"\nDelivery Time: " +
-deliveryTime;
-
-document.getElementById("receiptData")
-.value = receipt;
-
-document.getElementById("msg")
-.innerHTML =
-
-"✅ Order Submitted Successfully / ऑर्डर सफलतापूर्वक जमा हुआ";
-
-});
-
-function downloadPDF(){
-
-let text =
-document.getElementById("receiptData").value;
-
-if(text==""){
-
-alert(
-"Submit Order First"
-);
-
-return;
-
-}
-
-const { jsPDF } = window.jspdf;
-
-let pdf = new jsPDF();
-
-pdf.setDrawColor(255,20,147);
-
-pdf.setLineWidth(3);
-
-pdf.rect(5,5,200,287);
-
-pdf.setFontSize(18);
-
-pdf.setTextColor(255,20,147);
-
-pdf.text(
-"Royal Pizza Home Bansdih",
-20,
-20
-);
-
-pdf.setFontSize(12);
-
-pdf.setTextColor(0,0,0);
-
-let lines =
-pdf.splitTextToSize(text,180);
-
-pdf.text(lines,15,40);
-
-pdf.text(
-"Created by Amit Kumar Singh",
-55,
-285
-);
-
-pdf.save(
-"RoyalPizzaReceipt.pdf"
-);
-
-}
-
-function downloadMenu(){
-
-let menu = `
-
-ROYAL PIZZA HOME BANSDIH
-
-<!-- VEGGIE DELIGHT / वेजी डिलाइट -->
-
-<option value="Fresh Veggie Regular|130">Fresh Veggie Regular / फ्रेश वेजी रेगुलर - ₹130</option>
-<option value="Fresh Veggie Medium|240">Fresh Veggie Medium / फ्रेश वेजी मीडियम - ₹240</option>
-<option value="Fresh Veggie Large|360">Fresh Veggie Large / फ्रेश वेजी लार्ज - ₹360</option>
-
-<option value="Kids Delight Regular|130">Kids Delight Regular / किड्स डिलाइट रेगुलर - ₹130</option>
-<option value="Kids Delight Medium|240">Kids Delight Medium / किड्स डिलाइट मीडियम - ₹240</option>
-<option value="Kids Delight Large|360">Kids Delight Large / किड्स डिलाइट लार्ज - ₹360</option>
-
-<option value="Classics Veg Pizza Regular|130">Classics Veg Pizza Regular / क्लासिक वेज पिज्जा रेगुलर - ₹130</option>
-<option value="Classics Veg Pizza Medium|240">Classics Veg Pizza Medium / क्लासिक वेज पिज्जा मीडियम - ₹240</option>
-<option value="Classics Veg Pizza Large|360">Classics Veg Pizza Large / क्लासिक वेज पिज्जा लार्ज - ₹360</option>
-
-<option value="Mix Green Wave Regular|130">Mix Green Wave Regular / मिक्स ग्रीन वेव रेगुलर - ₹130</option>
-<option value="Mix Green Wave Medium|240">Mix Green Wave Medium / मिक्स ग्रीन वेव मीडियम - ₹240</option>
-<option value="Mix Green Wave Large|360">Mix Green Wave Large / मिक्स ग्रीन वेव लार्ज - ₹360</option>
-
-<!-- VEGGIE TREAT / वेजी ट्रीट -->
-
-<option value="Veggie Paradise Regular|150">Veggie Paradise Regular / वेजी पैराडाइज रेगुलर - ₹150</option>
-<option value="Veggie Paradise Medium|250">Veggie Paradise Medium / वेजी पैराडाइज मीडियम - ₹250</option>
-<option value="Veggie Paradise Large|390">Veggie Paradise Large / वेजी पैराडाइज लार्ज - ₹390</option>
-
-<option value="Spicy Double Tango Regular|150">Spicy Double Tango Regular / स्पाइसी डबल टैंगो रेगुलर - ₹150</option>
-<option value="Spicy Double Tango Medium|250">Spicy Double Tango Medium / स्पाइसी डबल टैंगो मीडियम - ₹250</option>
-<option value="Spicy Double Tango Large|390">Spicy Double Tango Large / स्पाइसी डबल टैंगो लार्ज - ₹390</option>
-
-<option value="Vegetarian Regular|150">Vegetarian Regular / वेजिटेरियन रेगुलर - ₹150</option>
-<option value="Vegetarian Medium|250">Vegetarian Medium / वेजिटेरियन मीडियम - ₹250</option>
-<option value="Vegetarian Large|390">Vegetarian Large / वेजिटेरियन लार्ज - ₹390</option>
-
-<option value="Double Cheese Margherita Regular|150">Double Cheese Margherita Regular / डबल चीज़ मार्घेरिटा रेगुलर - ₹150</option>
-<option value="Double Cheese Margherita Medium|250">Double Cheese Margherita Medium / डबल चीज़ मार्घेरिटा मीडियम - ₹250</option>
-<option value="Double Cheese Margherita Large|390">Double Cheese Margherita Large / डबल चीज़ मार्घेरिटा लार्ज - ₹390</option>
-
-<!-- VEGGIE FEAST / वेजी फीस्ट -->
-
-<option value="Deluxe Veggie Regular|170">Deluxe Veggie Regular / डीलक्स वेजी रेगुलर - ₹170</option>
-<option value="Deluxe Veggie Medium|270">Deluxe Veggie Medium / डीलक्स वेजी मीडियम - ₹270</option>
-<option value="Deluxe Veggie Large|430">Deluxe Veggie Large / डीलक्स वेजी लार्ज - ₹430</option>
-
-<option value="Roman Veg Regular|170">Roman Veg Regular / रोमन वेज रेगुलर - ₹170</option>
-<option value="Roman Veg Medium|270">Roman Veg Medium / रोमन वेज मीडियम - ₹270</option>
-<option value="Roman Veg Large|430">Roman Veg Large / रोमन वेज लार्ज - ₹430</option>
-
-<option value="Mix Tango Regular|170">Mix Tango Regular / मिक्स टैंगो रेगुलर - ₹170</option>
-<option value="Mix Tango Medium|270">Mix Tango Medium / मिक्स टैंगो मीडियम - ₹270</option>
-<option value="Mix Tango Large|430">Mix Tango Large / मिक्स टैंगो लार्ज - ₹430</option>
-
-<option value="Veg Tandoori Pizza Regular|170">Veg Tandoori Pizza Regular / वेज तंदूरी पिज्जा रेगुलर - ₹170</option>
-<option value="Veg Tandoori Pizza Medium|270">Veg Tandoori Pizza Medium / वेज तंदूरी पिज्जा मीडियम - ₹270</option>
-<option value="Veg Tandoori Pizza Large|430">Veg Tandoori Pizza Large / वेज तंदूरी पिज्जा लार्ज - ₹430</option>
-
-<!-- SPECIAL PIZZA / स्पेशल पिज्जा -->
-
-<option value="Farm House Regular|190">Farm House Regular / फार्म हाउस रेगुलर - ₹190</option>
-<option value="Farm House Medium|290">Farm House Medium / फार्म हाउस मीडियम - ₹290</option>
-<option value="Farm House Large|510">Farm House Large / फार्म हाउस लार्ज - ₹510</option>
-
-<option value="Maryland Paneer Pizza Regular|190">Maryland Paneer Pizza Regular / मैरीलैंड पनीर पिज्जा रेगुलर - ₹190</option>
-<option value="Maryland Paneer Pizza Medium|290">Maryland Paneer Pizza Medium / मैरीलैंड पनीर पिज्जा मीडियम - ₹290</option>
-<option value="Maryland Paneer Pizza Large|510">Maryland Paneer Pizza Large / मैरीलैंड पनीर पिज्जा लार्ज - ₹510</option>
-
-<option value="Paneer Delight Pizza Regular|190">Paneer Delight Pizza Regular / पनीर डिलाइट पिज्जा रेगुलर - ₹190</option>
-<option value="Paneer Delight Pizza Medium|290">Paneer Delight Pizza Medium / पनीर डिलाइट पिज्जा मीडियम - ₹290</option>
-<option value="Paneer Delight Pizza Large|510">Paneer Delight Pizza Large / पनीर डिलाइट पिज्जा लार्ज - ₹510</option>
-
-<option value="Royal Pizza Home Special Regular|190">Royal Pizza Home Special Regular / रॉयल पिज्जा होम स्पेशल रेगुलर - ₹190</option>
-<option value="Royal Pizza Home Special Medium|290">Royal Pizza Home Special Medium / रॉयल पिज्जा होम स्पेशल मीडियम - ₹290</option>
-<option value="Royal Pizza Home Special Large|510">Royal Pizza Home Special Large / रॉयल पिज्जा होम स्पेशल लार्ज - ₹510</option>
-
-<option value="Achari Pizza Regular|190">Achari Pizza Regular / अचारी पिज्जा रेगुलर - ₹190</option>
-<option value="Achari Pizza Medium|290">Achari Pizza Medium / अचारी पिज्जा मीडियम - ₹290</option>
-<option value="Achari Pizza Large|510">Achari Pizza Large / अचारी पिज्जा लार्ज - ₹510</option>
-
-<option value="Szechuan Pizza Regular|190">Szechuan Pizza Regular / शेज़वान पिज्जा रेगुलर - ₹190</option>
-<option value="Szechuan Pizza Medium|290">Szechuan Pizza Medium / शेज़वान पिज्जा मीडियम - ₹290</option>
-<option value="Szechuan Pizza Large|510">Szechuan Pizza Large / शेज़वान पिज्जा लार्ज - ₹510</option>
-<optgroup label="BURGER / बर्गर">
-
-<option value="Spicy Veg Burger|40">
-Spicy Veg Burger / स्पाइसी वेज बर्गर - ₹40
-</option>
-
-<option value="Cheese Burger|65">
-Cheese Burger / चीज़ बर्गर - ₹65
-</option>
-
-<option value="Mushroom Burger|70">
-Mushroom Burger / मशरूम बर्गर - ₹70
-</option>
-
-<option value="Double Cheese Burger|70">
-Double Cheese Burger / डबल चीज़ बर्गर - ₹70
-</option>
-
-<option value="Paneer Burger|70">
-Paneer Burger / पनीर बर्गर - ₹70
-</option>
-
-<option value="Veg Chilli Cheese Burger|90">
-Veg Chilli Cheese Burger / वेज चिली चीज़ बर्गर - ₹90
-</option>
-
-<option value="Makhani Paneer Burger|90">
-Makhani Paneer Burger / मखनी पनीर बर्गर - ₹90
-</option>
-
-<option value="Szechuan Paneer Burger|90">
-Szechuan Paneer Burger / शेज़वान पनीर बर्गर - ₹90
-</option>
-
-<option value="Achari Paneer Burger|90">
-Achari Paneer Burger / अचारी पनीर बर्गर - ₹90
-</option>
-
-</optgroup>
-
-Contact:
-7309277213
-
-`;
-
-let blob =
-new Blob([menu],{type:"text/plain"});
-
-let link =
-document.createElement("a");
-
-link.href =
-URL.createObjectURL(blob);
-
-link.download =
-"RoyalPizzaMenu.txt";
-
-link.click();
-
-}
-
 </script>
 
 </body>
